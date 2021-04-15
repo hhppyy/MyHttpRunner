@@ -1,0 +1,17 @@
+
+name: card api
+variables:
+    var1: value1
+    var2: value2
+    token: "67101fba134f71e02b9007931db2146ab442c25b"
+request:
+    url: http://localhost:8000/cards/
+    method: POST
+    headers:
+        Content-Type: "application/json"
+        Authorization: Token $token
+    json:
+        username: "test"
+        password: "123456"
+validate:
+    - eq: ["status_code", 201]

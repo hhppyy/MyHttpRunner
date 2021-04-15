@@ -1,0 +1,27 @@
+
+config:
+    name: "demo testcase"
+    variables: {}
+#        device_sn: "ABC"
+#        username: ${ENV(USERNAME)}
+#        password: ${ENV(PASSWORD)}
+#    base_url: "http://127.0.0.1:5000"
+
+teststeps:
+-
+    name: login step 1
+    api: api/login.yml
+    variables: {}
+#        user_agent: 'iOS/10.3'
+#        device_sn: $device_sn
+    extract:
+        - token: content.token
+    validate:
+        - eq: ["status_code", 200]
+-
+    name: cards step 2
+    api: api/cards.yml
+    variables:
+        token: $token
+    validate:
+        - eq: ["status_code", 201]

@@ -1,0 +1,6 @@
+2021-04-15 第一次提交：httprunner2.x创建项目
+    hrun --startproject MyHttpRunner
+    添加api文件---login.yml、cards.yml
+    创建testcases文件--test.yml
+    执行hrun testcases
+    在reports目录中生成报告
