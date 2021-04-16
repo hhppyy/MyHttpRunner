@@ -1,8 +1,6 @@
 
 name: card api
-variables:
-    var1: value1
-    var2: value2
+
     token: "68b95df162ae80f481371bdda1bbc35f5af81d84"
 request:
     url: http://localhost:8000/cards/

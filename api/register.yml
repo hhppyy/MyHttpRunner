@@ -1,8 +1,6 @@
 
 name: register api
-variables:
-    var1: value1
-    var2: value2
+
 request:
     url: http://123.56.231.107:8000/api/register/
     method: POST
@@ -18,4 +16,4 @@ request:
         repassword: '123123'
 validate:
     - eq: ["status_code", 200]
-#    - eq: ["body", ]
+
