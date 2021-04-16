@@ -4,3 +4,8 @@
     创建testcases文件--test.yml
     执行hrun testcases
     在reports目录中生成报告
+
+2021-04-15 第二次提交：extent_report_template2.4.3.html
+    添加register.yml
+
+
