@@ -7,5 +7,12 @@
 
 2021-04-15 第二次提交：extent_report_template2.4.3.html
     添加register.yml
-
+2021-04-16 第三次提交：
+    指定报告模板
+    hrun testcases --report-template reports/template/extent_report_template2.4.3.html
+    默认模板
+    hrun testcases
+    接口返回中文展示为Unicode，解决
+        注释extent_report_template2.4.3.html中
+        <!--<pre>{{ value | tojson | e }}</pre>-->
 

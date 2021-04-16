@@ -433,7 +433,8 @@
                                                                         {% endif %}
                                                                     {% elif key in ["text", "json"] %}
                                                                         {% if value is mapping%}
-                                                                            <pre>{{ value | tojson | e }}</pre>
+                                                                            <!--<pre>{{ value | tojson | e }}</pre>-->
+                                                                            <pre>{{ value | e }}</pre>
                                                                         {% else %}
                                                                             <pre>{{ value | e }}</pre>
                                                                         {% endif %}
