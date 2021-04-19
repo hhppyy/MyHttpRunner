@@ -1,0 +1,14 @@
+
+config:
+    name: 正则提取
+    base_url: http://localhost:8000
+teststeps:
+-
+    name: 正则提取 step 1
+    api: api/test_re.yml
+    extract:
+          #<h2 class="form-signin-heading">请登录</h2>
+        - test1: <h2 class="form-signin-heading">(.*)</h2>
+    validate:
+        - eq: ["status_code", 200]
+        - eq: ['$test1', 请登录]

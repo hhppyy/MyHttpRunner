@@ -1,0 +1,13 @@
+
+name: 正则提取extract
+
+base_url: http://localhost:8000
+request:
+    url: /xadmin/
+    method: GET
+extract:
+      #<h2 class="form-signin-heading">请登录</h2>
+    - test1: <h2 class="form-signin-heading">(.*)</h2>
+validate:
+    - eq: ["status_code", 200]
+    - eq: ['$test1', 请登录]

@@ -1,15 +1,18 @@
 
 name: card api
-
-    token: "68b95df162ae80f481371bdda1bbc35f5af81d84"
+variables:
+    card_id: test
+    card_user: 123456
+    token: "af82c1394b9d4e95d5fdf34de622785a659600b1"
+base_url: http://localhost:8000
 request:
-    url: http://localhost:8000/cards/
+    url: /cards/
     method: POST
     headers:
         Content-Type: "application/json"
         Authorization: Token $token
     json:
-        card_id: "test"
-        card_user: "123456"
+        card_id: $card_id
+        card_user: $card_user
 validate:
     - eq: ["status_code", 201]

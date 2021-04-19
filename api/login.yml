@@ -1,13 +1,17 @@
 
 name: login api
+variables:
+    p_username : test      # api变量
+    p_password: test123456  # api变量
+base_url: http://localhost:8000
 
 request:
-    url: http://localhost:8000/api/v1/login/
+    url: /api/v1/login/
     method: POST
     headers:
         Content-Type: "application/json"
     json:
-        username: "test"
-        password: "123456"
+        username: $p_username # 使用变量p_username
+        password: $p_password # 使用变量p_password
 validate:
     - eq: ["status_code", 200]

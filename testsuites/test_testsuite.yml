@@ -1,0 +1,20 @@
+
+config:
+    name: test 测试套件
+    variables:
+      p_username : test1      # 测试套件-config变量
+      p_password: test123456  # 测试套件-config变量
+    base_url: http://localhost:8000
+
+testcases:
+-
+    name: 测试用例test.yml
+    testcase: testcases/test.yml
+    variables:
+        p_username: admin2     # 测试套件-testcases变量
+        p_password: test123456 # 测试套件-testcases变量
+#-
+#    name: call demo_testcase with data 2
+#    testcase: path/to/demo_testcase.yml
+#    variables:
+#        device_sn: $device_sn

@@ -1,0 +1,16 @@
+
+name: card api
+variables:
+
+    token: "70b4090d67ebb9b65b1fe6e9aaf1094105ea84c5"
+base_url: http://localhost:8000
+request:
+    url: /cards/
+    method: GET
+    headers:
+        Authorization: Token $token
+extract:
+    id: content.0.id
+validate:
+    - eq: ["status_code", 200]
+    - eq: [$id, 1]

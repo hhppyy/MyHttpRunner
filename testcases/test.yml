@@ -1,19 +1,17 @@
 
 config:
     name: "demo testcase"
-    variables: {}
-#        device_sn: "ABC"
-#        username: ${ENV(USERNAME)}
-#        password: ${ENV(PASSWORD)}
-#    base_url: "http://127.0.0.1:5000"
-
+    variables:
+        p_username: test
+        p_password: test123456
+    base_url: http://localhost:8000
 teststeps:
 -
     name: login step 1
     api: api/login.yml
-    variables: {}
-#        user_agent: 'iOS/10.3'
-#        device_sn: $device_sn
+    variables:
+        p_username: admin2
+        p_password: test123456
     extract:
         - token: content.token
     validate:
@@ -25,3 +23,8 @@ teststeps:
         token: $token
     validate:
         - eq: ["status_code", 201]
+
+# config 和testteps中的variables名称一样时
+#优先取config中variables中参数
+# config中没有设置，取testseps中参数
+# testcase中参数会覆盖api文件中参数
