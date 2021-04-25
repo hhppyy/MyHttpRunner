@@ -1,0 +1,23 @@
+
+config:
+    name: 提取 ["status_code", "encoding", "ok", "reason", "url"]
+    base_url: http://localhost:8000
+    variables:
+        p_username: test       # api变量
+        p_password: test123456  # api变量
+        t1: False               #定义一个布尔值类型
+teststeps:
+-
+    name: 提取 ["status_code", "encoding", "ok", "reason", "url"]
+    api: api/login.yml
+    extract:
+        - s1: status_code   #提取响应状态码
+        - s2: encoding      #提取响应编码方式
+        - s3: reason        #提取原因短语
+        - s4: url           #提取请求地址
+    validate:
+        - eq: [$t1, False]  #进行布尔值断言
+        - eq: [$s1, 200]    #“status_code” 进行HTTP响应状态码断言
+        - eq: [$s2, utf-8]  #“encoding” 进行编码格式断言
+        - eq: [$s3, OK]     #“reason” 进行响应状态端游断言，如 200-OK，403-Forbidden
+        - eq: [$s4, http://localhost:8000/api/v1/login/]

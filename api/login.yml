@@ -1,7 +1,7 @@
 
 name: login api
 variables:
-    p_username : test      # api变量
+    p_username : test       # api变量
     p_password: test123456  # api变量
 base_url: http://localhost:8000
 
@@ -13,5 +13,5 @@ request:
     json:
         username: $p_username # 使用变量p_username
         password: $p_password # 使用变量p_password
-validate:
-    - eq: ["status_code", 200]
+#validate:
+#    - eq: ["status_code", 200]
