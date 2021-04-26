@@ -1,0 +1,19 @@
+
+name: 访问百度提取时间
+
+
+request:
+    url: https://www.baidu.com/
+    method: GET
+extract:
+    # 提取响应时间
+    - t1: elapsed.microseconds  # 单位：微秒（1秒=1000毫秒=1000000微秒）
+    - t2: elapsed.total_seconds # 单位：秒（将微秒换算成秒）
+    - t3: elapsed.seconds       # 单位：秒（最小值为1秒）
+    - t4: elapsed.days          # 单位：天（最小值为1天）
+validate:
+    # lt 实际结果小于预期结果即为验证通过
+    - lt: [$t1, 2000000]
+    - lt: [$t2, 2]
+    - lt: [$t3, 2]
+    - lt: [$t4, 0.01]

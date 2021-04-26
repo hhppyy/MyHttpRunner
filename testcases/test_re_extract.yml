@@ -5,7 +5,7 @@ config:
 teststeps:
 -
     name: 正则提取 step 1
-    api: api/test_re.yml
+    api: api/re.yml
     extract:
           #<h2 class="form-signin-heading">请登录</h2>
         - test1: <h2 class="form-signin-heading">(.*)</h2>
