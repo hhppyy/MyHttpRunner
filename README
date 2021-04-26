@@ -20,3 +20,5 @@
 2021-04-25 第五次提交
     用例中提取数据["status_code", "encoding", "ok", "reason", "url"]
     新增testcases/test_extract_1.yml
+2021-04-26 第六次提交
+    提取elapsed
