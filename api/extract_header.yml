@@ -1,0 +1,23 @@
+
+name: 访问百度提取headers
+
+request:
+    url: https://www.baidu.com/
+    method: GET
+    # 模拟浏览器登录
+    headers:
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36
+extract:
+    # 从响应头域提取
+    - h1: headers.Bdpagetype
+    - h2: headers.Content-Encoding
+    - h3: headers.Expires
+    - h4: headers.Set-Cookie
+validate:
+    # lt 实际结果小于预期结果即为验证通过
+    - eq: [$h1, '1']
+    - eq: [$h2, gzip]
+    # contains 包含，验证返回的Expires头域中是否包含2021
+    - contains: [$h3, '2021']
+    # regex_match：正则匹配，验证是否有名称为 BDSVRTM 的 cookie
+    - regex_match: [$h4, '.*(BDSVRTM).*']

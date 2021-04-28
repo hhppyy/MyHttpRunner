@@ -1,0 +1,24 @@
+
+name: 访问百度提取["content", "text", "json"]
+
+request:
+    url: https://www.baidu.com/
+    method: GET
+    # 模拟浏览器登录
+    headers:
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36
+extract:
+    # 从响应头域提取
+    - r1: headers       # 提取响应整个headers头域 dict类型
+    - r3: content       # 提取整个响应实体
+    - r4: json          # 提取整个响应实体
+    - r5: text          # 提取整个响应实体
+
+
+validate:
+    - eq: [status_code,200]
+    - len_gt: [$r1, 5]
+    - contains: [$r3, kw]
+    - contains: [$r4, kw]
+    - contains: [$r5, kw]
+
