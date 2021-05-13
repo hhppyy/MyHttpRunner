@@ -22,3 +22,6 @@
     新增testcases/test_extract_1.yml
 2021-04-26 第六次提交
     提取elapsed
+2021-04-28 第七次提交
+    提取["content", "text", "json"]
+    提取headers
