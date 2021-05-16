@@ -1,0 +1,22 @@
+
+name: 断言的2种写法
+
+
+request:
+    url: https://www.baidu.com/
+    method: GET
+    headers:
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36
+
+
+validate:
+    # 断言一
+    - eq: [status_code, 200]
+    # 断言二
+    - check: status_code
+      comparator: eq
+      expect: 200
+    # 等价断言一
+    - is: [status_code, 200]
+    - ==: [status_code, 200]
+    - equals: [status_code, 200]
