@@ -1,0 +1,23 @@
+
+config:
+    name: 通过头域提取
+    base_url: http://123.56.231.107:8000
+
+teststeps:
+-
+    name: 第一步：调用登录接口，并提取cookies
+    api: api/httprunnermanager_login.yml
+    extract:
+        - cookievalue: headers.Set-Cookie  #从上面请求结果（响应）中提取 cookies
+    validate:
+        - eq: ['status_code', 302]
+
+-
+    name: 第二步：传入cookievalue
+    api: api/index2.yml
+    extract:
+        - s1: status_code   #提取响应状态码
+        - s2: '\> (.*) \&nbsp\;\&nbsp' # 通过正则提取页面中欢迎您：test
+    validate:
+        - eq: [$s1, 200]    #“status_code” 进行HTTP响应状态码断言
+        - eq: [$s2, '欢迎您：test']

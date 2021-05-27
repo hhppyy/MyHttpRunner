@@ -1,0 +1,28 @@
+
+config:
+    name: 跳过测试步骤
+    variables:
+        x: True
+teststeps:
+-
+    name: 步骤1
+    # 本步骤没有使用 skip 相关关键字，不会被跳过
+    api: api/baidu_validate.yml
+    validate:
+        - eq: ["status_code", 200]
+-
+    name: 步骤2
+    # 本步骤使用了 skipUnless关键字，判断 x 变量的取值
+    # 由于前面定义了 x 为“假”，所以本步骤将不允许被执行
+    skipUnless: $x
+    api: api/baidu_validate.yml
+    validate:
+        - eq: ["status_code", 200]
+-
+    name: 步骤3
+    # 本步骤使用了 skipIf 关键字，判断 x 变量的取值
+    # 由于前面定义了 x 为“真”，所以本步骤将被执行
+    skipIf: $x
+    api: api/baidu_validate.yml
+    validate:
+        - eq: ["status_code", 200]

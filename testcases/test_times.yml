@@ -1,0 +1,11 @@
+
+config:
+    name: 重复执行测试步骤
+
+teststeps:
+-
+    times: 0
+    name: login step 1
+    api: api/baidu_validate.yml
+    validate:
+        - eq: ["status_code", 200]
