@@ -1,0 +1,19 @@
+
+name: httprunnermanager_login api # 获取固定名称sessionid
+
+base_url: http://123.56.231.107:8000
+
+request:
+    data:
+        account: test
+        password: 123456
+    url: /api/login/
+    method: POST
+    headers:
+        Content-Type: application/x-www-form-urlencoded
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+    # 禁止重定向
+    allow_redirects: False
+#validate:
+#    - eq: ["status_code", 302]
