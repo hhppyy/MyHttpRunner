@@ -1,0 +1,11 @@
+
+name: upload file-like-objects
+
+request:
+    url: http://graph.baidu.com/upload
+    method: POST
+    #上传图片
+    files:
+        image: $p_fileobj
+validate:
+    - eq: ["status_code", 200]

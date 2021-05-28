@@ -1,0 +1,16 @@
+
+config:
+    name: 百度上传文件
+    variables:
+        # 图片路径
+        p_filepath: 'E:\\MyHttpRunner\\data\\kenan.jpg'
+        # 调用 debugtalk.py 中的 get_file() 函数
+        p_fileobj: ${get_file($p_filepath)}
+
+teststeps:
+-
+    name:  step 1
+    api: api/baiduUpload.yml
+    validate:
+        - eq: ["status_code", 200]
+        - eq: [content.msg, Success]

@@ -1,0 +1,16 @@
+
+name: upload file-tuple
+
+request:
+    url: http://graph.baidu.com/upload
+    method: POST
+    #上传图片
+    files:
+        # 格式：2-tuple ``('filename', fileobj)
+        # image: [kenan.jpg,$p_fileobj]
+        # 格式：3-tuple ``('filename', fileobj, 'content_type')
+        # image: [kenan.jpg,$p_fileobj,image/jpeg]
+        # 4-tuple ``('filename', fileobj, 'content_type', custom_headers)
+        image: [kenan.jpg,$p_fileobj,image/jpeg,aaa]
+validate:
+    - eq: ["status_code", 200]

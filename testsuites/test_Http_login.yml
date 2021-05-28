@@ -1,0 +1,36 @@
+
+config:
+    name: 登录 测试套件
+
+    base_url: http://123.56.231.107:8000
+
+testcases:
+-
+    name: 测试用例test.yml
+    testcase: testcases/test_Httplogin.yml
+    parameters:
+#        p_username: [admin,test,test1]     # 测试套件-testcases变量
+        # 每次读取一对参数
+#        p_username-p_password:
+#            - [admin,11111]
+#            - [test,123456]
+#            - [test123,1111]
+        # 笛卡尔积，用例被执行3*3=9次
+#        p_username: [admin,test,test123]
+#        p_password: [11111,123456,123123]
+        # 通过P（注意：大写）函数调用CSV文件
+#        p_username: ${P(data/params.csv)}
+        # 参数固定组合取值，参数之间端（-）横线连接
+#        p_username-p_password: ${P(data/params.csv)}
+        # 笛卡尔积 分别从2个csv文件中取值
+#        p_username: ${P(data/username_params.csv)}
+#        p_password: ${P(data/password_params.csv)}
+        # 调用debugtalk.py文件中函数
+#        p_username: ${username_params()}
+        # 调用debugtalk.py文件中函数
+#        p_username-p_password: ${get_params()}
+        # 笛卡尔积 分别从2个函数中取值
+        p_username: ${username_params()}
+        p_password: ${password_params()}
+
+

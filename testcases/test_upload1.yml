@@ -1,0 +1,11 @@
+
+config:
+    name: 百度上传文件-upload关键字
+
+teststeps:
+-
+    name:  step 1
+    api: api/upload1.yml
+    validate:
+        - eq: ["status_code", 200]
+        - eq: [content.msg, Success]

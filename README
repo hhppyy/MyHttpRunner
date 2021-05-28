@@ -44,3 +44,11 @@
     重复执行步骤：times
     跳过执行步骤 skip/skipIf/skipUnless
     debugtalk.py中添加get_file函数，获取file-like-objects
+
+2021-05-28 第十二次提交
+    文件上传-推荐使用upload关键字
+    项目分层
+    测试条件中参数化：
+        内置参数化
+        外置文件参数化：${P(csv文件)}
+        动态函数参数化：${func()}

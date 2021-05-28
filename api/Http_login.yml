@@ -1,0 +1,20 @@
+
+name: login api
+variables:
+    p_username : test       # api变量
+    p_password: 123456      # api变量
+base_url: http://123.56.231.107:8000
+
+request:
+    url: /api/login/
+    method: POST
+    headers:
+        Content-Type: application/x-www-form-urlencoded
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+    data:
+        account: $p_username # 使用变量p_username
+        password: $p_password # 使用变量p_password
+    # 禁止重定向
+    allow_redirects: False
+#validate:
+#    - eq: ["status_code", 200]

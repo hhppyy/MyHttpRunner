@@ -1,0 +1,12 @@
+
+name: upload关键字
+
+request:
+    url: http://graph.baidu.com/upload
+    method: POST
+    #上传图片
+    upload:
+        # name属性：文件路径及名称
+        image: 'data\kenan.jpg'
+validate:
+    - eq: ["status_code", 200]
