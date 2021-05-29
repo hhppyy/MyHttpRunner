@@ -3,7 +3,8 @@ config:
     name: 注册用户测试用例
     variables:
         p_account: test1112
-    base_url: http://123.56.231.107:8000
+    # 引用环境变量
+    base_url: ${ENV(base_url)}
 
 teststeps:
 -

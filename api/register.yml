@@ -2,7 +2,7 @@
 name: httprunnermanager平台注册接口
 variables:
     p_account: test1112
-base_url: http://123.56.231.107:8000
+
 request:
     url: /api/register/
     method: POST
