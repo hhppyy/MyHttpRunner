@@ -1,0 +1,44 @@
+
+config:
+    name: hooks用例层
+
+    # 执行用例前
+    setup_hooks:
+        # 调用hooks函数
+        - ${print_msg2(用例,testcase开始)}
+
+    # 执行用例后
+    teardown_hooks:
+        # 调用hooks函数
+        - ${print_msg2(用例,testcase结束)}
+
+teststeps:
+-
+    name:  测试步骤1 - 打开百度页面
+    # 执行步骤前
+    setup_hooks:
+        # 调用hooks函数
+        - ${print_msg2(步骤1,testsetp1开始)}
+
+    # 执行步骤后
+    teardown_hooks:
+        # 调用hooks函数
+        - ${print_msg2(步骤1,testsetp1结束)}
+    api: api/baidu.yml
+    validate:
+        - eq: ["status_code", 200]
+
+-
+    name:  测试步骤2 - 打开新闻页面
+    # 执行步骤前
+    setup_hooks:
+        # 调用hooks函数
+        - ${print_msg2(步骤2,testsetp2开始)}
+
+    # 执行步骤后
+    teardown_hooks:
+        # 调用hooks函数
+        - ${print_msg2(步骤2,testsetp2结束)}
+    api: api/baidu_new.yml
+    validate:
+        - eq: ["status_code", 200]

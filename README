@@ -34,10 +34,10 @@
 
 2021-05-27 第九次提交
     固定名称sessionid提取，并传递下个接口
-    禁止重定向
+    禁止重定向 allow_redirects: False
 2021-05-27 第十次提交
     通过头域提取sessionid提取，并传递下个接口
-    禁止重定向
+    禁止重定向 allow_redirects: False
     运行用例查看日志
     >hrun ttest.yml --log-level debug
 2021-05-27 第十一次提交
@@ -52,3 +52,29 @@
         内置参数化
         外置文件参数化：${P(csv文件)}
         动态函数参数化：${func()}
+2021-05-29 第十三次提交
+    hooks机制
+        setup_hooks
+        teardwn_hooks
+    连接数据库class、前置清理数据、后置查询数据
+    测试用例层hooks
+    测试步骤层hooks
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

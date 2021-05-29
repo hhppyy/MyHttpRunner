@@ -1,0 +1,22 @@
+
+config:
+    name: 注册用户测试用例
+    variables:
+        p_account: test1112
+    base_url: http://123.56.231.107:8000
+
+teststeps:
+-
+    name: 调用注册接口
+
+    setup_hooks:
+        - ${del_date($p_account)}
+    teardown_hooks:
+        - ${sel_date($p_account)}
+        -
+    api: api/register.yml
+    variables:
+        p_account: test1112
+    validate:
+        - eq: ["status_code", 200]
+        - eq: [content, 恭喜您，账号已成功注册]

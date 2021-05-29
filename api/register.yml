@@ -1,8 +1,10 @@
 
-name: register api
-
+name: httprunnermanager平台注册接口
+variables:
+    p_account: test1112
+base_url: http://123.56.231.107:8000
 request:
-    url: http://123.56.231.107:8000/api/register/
+    url: /api/register/
     method: POST
     headers:
         Content-Type: "application/json"
@@ -10,7 +12,7 @@ request:
           (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
         X-Requested-With: XMLHttpRequest
     json:
-        account: "test1112"
+        account: $p_account
         email: "test11112@123.com"
         password: '123123'
         repassword: '123123'

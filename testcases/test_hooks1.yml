@@ -1,0 +1,20 @@
+
+config:
+    name: hooks用例层
+
+    # 执行用例前
+    setup_hooks:
+        # 调用hooks函数
+        - ${print_msg(开始)}
+
+    # 执行用例后
+    teardown_hooks:
+        # 调用hooks函数
+        - ${print_msg(结束)}
+
+teststeps:
+-
+    name:  测试步骤 - 打开百度页面
+    api: api/baidu.yml
+    validate:
+        - eq: ["status_code", 200]
