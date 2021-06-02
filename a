@@ -1,0 +1,55 @@
+
+登录接口
+	url：http://localhost:8000/api/v1/login/
+	请求方式：POST
+	请求类型：Content-Type: application/json
+	参数：
+	{
+		"username": "test11",
+		"password": "test11"
+	}
+	返回
+	{
+		"code": 0,
+		"msg": "登录成功",
+		"usernam": "test1",
+		"token": "466280284ce032fe8ede58e4d9fda701c4357b63"
+	}
+
+
+添加银行卡接口
+	url：http://localhost:8000/cards/
+	请求方式：POST
+	请求类型：Content-Type: application/json
+	请求头：Authorization: Token 466280284ce032fe8ede58e4d9fda701c4357b44
+
+	参数：
+	{
+		"card_id": "test11",
+		"card_user": "test11"
+	}
+
+	返回
+	{
+		"id":10,
+		"add_time":"2021-04-16 10:23:28",
+		"card_id":"test",
+		"card_user":"123456"
+	}
+
+httprunnermanagerweb注册接口
+	url：http://123.56.231.107:8000/api/register/
+	请求方式：POST
+	请求类型：Content-Type: application/json
+	请求头：X-Requested-With: XMLHttpRequest
+
+	参数：
+	{
+		"account": "test112",
+		"email": "test1112@123.com",
+		"password": "123123",
+		"repassword": "123123"
+	}
+
+	返回
+		恭喜您，账号已成功注册
